@@ -9,6 +9,10 @@ COPY backupdata/small.bak /datarestore
 COPY backupdata/restoredata.sh /datarestore
 RUN chmod +x /datarestore/restoredata.sh
 
+RUN mkdir /hostsplat
+RUN echo "hello world" > /hostsplat/greeting
+VOLUME /hostsplat
+
 # run with    docker run -d -p 1434:1433 smallsql
 # AFter SQL is up, restore data with the following (changing c5 for the container id)
 # docker exec -it c5 /opt/mssql-tools/bin/sqlcmd -H localhost -U SA -P 'qwe123QWE!@#' -Q "RESTORE DATABASE mydb FROM DISK = N'/datarestore/small.bak' WITH  FILE = 1,  NOUNLOAD,  REPLACE,  STATS = 5"
