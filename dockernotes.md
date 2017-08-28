@@ -13,6 +13,7 @@
 - You could use different dockerfiles in your code base that build different images of the code for different environments
 - [COPY](https://docs.docker.com/engine/reference/builder/#copy) can be used to copy files and folders into the image. You might use this to copy in a version of the code. ADD is similar to copy however can also unpack archives. COPY is [preferred](https://stackoverflow.com/a/24958548/494635) un`less you need ADD
 - [ENV](https://docs.docker.com/engine/reference/builder/#env) can be used to set environment variables on the image
+- [Best Practises](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)
 
 ## Bind Mounts
 - [great docs](https://docs.docker.com/engine/admin/volumes/bind-mounts/)
