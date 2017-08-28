@@ -7,12 +7,12 @@ services:
             - teamcity-server-datadir:/data/teamcity_server/datadir
             - teamcity-server-logs:/opt/teamcity/logs
         ports:
-            - 10000:10000
+            - 10000:8111
     teamcity-agent:
         image: aspnetcore/teamcity-agent-with-compose:2017.1.2
         build: ./agent
         environment:
-            SERVER_URL: http://teamcity:10000
+            SERVER_URL: http://teamcity:8111
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
     web:
