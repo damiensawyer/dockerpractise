@@ -1,5 +1,0 @@
-web:
-  restart: always
-  build: ./conf/
-  ports:
-    - "80:80"
