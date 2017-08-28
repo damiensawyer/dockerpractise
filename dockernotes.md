@@ -1,6 +1,9 @@
 ## Images and Containers
 - An image is like a class, containers are instances of classes.
 
+## Links
+[.NET Core v1.1.1, Docker Container, Linux Tutorial](https://www.linkedin.com/pulse/net-core-v111-docker-container-linux-tutorial-joe-hoeller--1)
+
 ## Dockerfile
 - Used as a template for generating images
 - Are based on other images in an cumulative stack. The bottom image is 'Scratch' which can only run a binary.  
