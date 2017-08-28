@@ -4,15 +4,11 @@ services:
 
     sonarqube:
         image: sonarqube
-        ports: 
-            - 9000:9000
     teamcity:
         image: jetbrains/teamcity-server:2017.1.2
         volumes:
             - teamcity-server-datadir:/data/teamcity_server/datadir
-            - teamcity-server-logs:/opt/teamcity/logs
-        ports:
-            - 10000:8111
+            - teamcity-server-logs:/opt/teamcity/
     teamcity-agent:
         image: aspnetcore/teamcity-agent-with-compose:2017.1.2
         build: ./agent
@@ -25,6 +21,8 @@ services:
         build: ./nginx/conf/
         ports:
             - "80:80"
+        volumes:
+            - ./www:/usr/share/nginx/html
 
 volumes:
     teamcity-server-datadir:
